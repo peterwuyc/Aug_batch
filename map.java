@@ -27,8 +27,8 @@ public class map {
         map.put(1, "modify");
         System.out.println(map);
 
-        boolean check = map.containsKey(1);
-        System.out.println(check);
+        System.out.println(map.get(3));
+        // System.out.println(check);
         System.out.println(findKey(map, "bbb"));
 
     }
