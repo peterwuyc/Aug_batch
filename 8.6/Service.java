@@ -1,7 +1,7 @@
 import java.util.*;
 
 public interface Service {
-    List<String> getAllElements(); // 对返回值进行排序，按照升序返回结果
+    List<String> getAllElements(); 
 
     String getElementByKey(Integer key);
 
