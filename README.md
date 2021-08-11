@@ -64,3 +64,19 @@ public interface Dao{
     
     //。。。。其他实现方法
   }
+    
+    
+    作业4
+   
+  // 使用spring initializer 初始化 springBoot 项目
+     1.实现对静态map 增删改查 (service 和dao 代码可以搬前面的作业)
+     2.@GetMapping @PostMapping ....
+     3.使用不同传递参数机制  @Pathvariable @RequestParam @RequestBody
+     4.创建 Student 类  (request body ？）
+     public class Student{
+       private Integer id;
+       private String name; 
+       private Integer age;
+       // 思考如果有List 怎么传递参数？ 例如 private List<String> classList=new ArrayList();
+     }
+     
