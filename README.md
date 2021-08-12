@@ -1,9 +1,10 @@
 # Aug_batch
 
-|Date|Assignment|
-|---|---|
-8.3 sumPrime \n
-8.5 create class person \n
-8.6 Dao-Service-Controller(main) structure \n
-8.9 none \n
-8.10 spring with get put post delete
+|Date|content|Assignment|
+|---|---|---|
+|8.2|ppt||
+|8.3 |ppt|sumPrime |
+|8.5| |create class person |
+|8.6|Dao-Service-Controller| Dao-Service-Controller(main) structure|
+|8.9| spring & postman | download |
+|8.10| |spring with get put post delete|
