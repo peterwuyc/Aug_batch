@@ -8,3 +8,4 @@
 |8.6|Dao-Service-Controller| Dao-Service-Controller(main) structure|
 |8.9| spring & postman | download |
 |8.10| spring start |spring with get put post delete| getallstudent internet fail|
+|8.11| dependency injection 三种方法|
