@@ -1,5 +1,7 @@
 # Aug_batch
 
+|Date|Assignment|
+|---|---|
 8.3 sumPrime \n
 8.5 create class person \n
 8.6 Dao-Service-Controller(main) structure \n
