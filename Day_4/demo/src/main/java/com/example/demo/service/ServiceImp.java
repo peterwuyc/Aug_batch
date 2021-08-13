@@ -9,8 +9,14 @@ import com.example.demo.entity.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceImp implements Service {
-    private Dao dao = new DaoImp();
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+//@org.springframework.stereotype.Service
+@Service
+public class ServiceImp implements DemoService {
+    @Autowired
+    private Dao dao;
 
     @Override
     public List getAllElements() {
@@ -39,4 +45,5 @@ public class ServiceImp implements Service {
     public Student getElementByKey(Integer id) {
         return dao.getElementByKey(id);
     }
+
 }

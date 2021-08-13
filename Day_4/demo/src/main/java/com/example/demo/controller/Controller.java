@@ -2,30 +2,31 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Student;
 import com.example.demo.entity.StudentBodyRequest;
-import com.example.demo.service.Service;
-import com.example.demo.service.ServiceImp;
+import com.example.demo.service.DemoService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class Controller {
-    private Service service = new ServiceImp();
+    @Autowired
+    private DemoService service;
 
     @GetMapping(value = "/findStudent/{id}")
     public Student getStudentById(@PathVariable Integer id){
+        Student s = null;
+        s.getId();
         return service.getElementByKey(id);
     }
 
     @GetMapping(value = "/getAllStudent")
     public List<Student> getAllStudent(){
-        try{
-            return service.getAllElements();
-        }
-        catch(Exception e){
-            return null;
-        }
+        int[] list = new int[2];
+        int cur = list[2];
+        return service.getAllElements();
+
     }
     @PostMapping(value = "/createStudent")
     public void createStudent(@RequestBody StudentBodyRequest request){

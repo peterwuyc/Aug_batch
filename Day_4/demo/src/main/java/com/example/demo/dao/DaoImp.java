@@ -2,9 +2,11 @@ package com.example.demo.dao;
 
 
 import com.example.demo.entity.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Service
 public class DaoImp implements Dao {
     private static Map<Integer, Student> map = new HashMap<Integer,Student>();
 
