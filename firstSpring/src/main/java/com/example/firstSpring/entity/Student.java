@@ -1,5 +1,8 @@
 package com.example.firstSpring.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -17,13 +20,25 @@ public class Student {
     private Integer id;
     private String name;
     private Integer age;
+    //8.12
+    private List<String> list=new ArrayList<>();
+    //private List<Student> students = new ArrayList<>();
 
     public Student(){}
 
-    public Student(Integer id, String name, Integer age){
+    public Student(Integer id, String name, Integer age, List<String> list){
         this.id = id;
         this.name = name;
         this.age = age;
+        this.list = list;
+    }
+
+    public List<String> getList() {
+        return list;
+    }
+
+    public void setList(List<String> list) {
+        this.list = list;
     }
 
     public Integer getId() {
@@ -48,5 +63,14 @@ public class Student {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString(){
+        return "Result{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

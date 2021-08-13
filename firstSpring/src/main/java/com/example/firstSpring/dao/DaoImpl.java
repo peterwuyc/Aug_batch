@@ -1,6 +1,10 @@
 package com.example.firstSpring.dao;
 
 import com.example.firstSpring.entity.Student;
+import com.example.firstSpring.service.Service;
+import com.example.firstSpring.service.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +21,13 @@ import java.util.*;
  * @Email : PEIYINGLYU@GMAIL.COM
  * @Description :
  */
-
+//@注解
+@Repository
 public class DaoImpl implements Dao {
     private static Map<Integer, Student> map = new HashMap<>();
+    //@Autowired
+   // private Service service;
+
     public DaoImpl() {
     }
 
@@ -31,7 +39,6 @@ public class DaoImpl implements Dao {
                 Integer id = entry.getKey();
                 studentList.add(map.get(id));
             }
-
         }
         return studentList;
     }
