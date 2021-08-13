@@ -1,7 +1,7 @@
 # Aug_batch
 
-|Date|content|Assignment| Issue|update
-|---|---|---|---|
+|Date|content|Assignment| Issue|update|
+|---|---|---|---|---|
 |8.2|ppt|
 |8.3 |ppt|sumPrime |
 |8.5| |create class person & map|
