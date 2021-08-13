@@ -5,65 +5,49 @@ import com.example.demo.entity.StudentBodyRequest;
 import com.example.demo.service.Service;
 import com.example.demo.service.ServiceImp;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class Controller {
-    Service service = new ServiceImp();
+    @Autowired
+    private Service service;// = new ServiceImp();
 
 
     @GetMapping(value = "/gp/student")
-    public String get(@RequestParam("id")Integer id){
-        try {
+    public String get(@RequestParam("id")Integer id) throws Exception {
             service.getElementByKey(id);
             return "successful get";
-        } catch (Exception e) {
-            e.printStackTrace();
-            return e.getMessage();
-        }
     }
 
     @PostMapping(value = "/gp/student", consumes = {"application/json"})
-    public String post(@RequestBody StudentBodyRequest request){
+    public String post(@RequestBody StudentBodyRequest request) throws Exception {
         Student student = new Student();
         BeanUtils.copyProperties(request,student);
-        try {
-            service.createElement(student.getId(),student);
-            service.getAllElements();
-            return "successful create";
-        } catch (Exception e) {
-            e.printStackTrace();
-            return e.getMessage();
-        }
+        service.createElement(student.getId(),student);
+        service.getAllElements();
+        return "successful create";
+
     }
 
     @DeleteMapping(value = "/gp/student")
-    public String delet(@RequestParam("id")Integer id){
-        try {
-            service.deleteElementByKey(id);
-            service.getAllElements();
-            return "successful delete";
-        } catch (Exception e) {
-            e.printStackTrace();
-            return e.getMessage();
-        }
+    public String delet(@RequestParam("id")Integer id) throws Exception {
+        service.deleteElementByKey(id);
+        service.getAllElements();
+        return "successful delete";
     }
 
     @PutMapping(value = "/gp/student")
-    public String put(@RequestBody StudentBodyRequest request){
+    public String put(@RequestBody StudentBodyRequest request) throws Exception {
         Student student = new Student();
         BeanUtils.copyProperties(request,student);
-        try {
-            service.updateElementByKey(student.getId(),student);
-            service.getAllElements();
-            return "successful update";
-        } catch (Exception e) {
-            e.printStackTrace();
-            return e.getMessage();
-        }
+        service.updateElementByKey(student.getId(),student);
+        service.getAllElements();
+        return "successful update";
     }
+
     @GetMapping(value = "/gp/student/all")
     public List get(){
         return service.getAllElements();

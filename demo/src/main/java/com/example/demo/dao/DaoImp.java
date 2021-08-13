@@ -1,12 +1,14 @@
 package com.example.demo.dao;
 
 import com.example.demo.entity.Student;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class DaoImp implements Dao{
     private Map<Integer,Student> map;
 

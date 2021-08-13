@@ -3,11 +3,14 @@ package com.example.demo.service;
 import com.example.demo.dao.Dao;
 import com.example.demo.dao.DaoImp;
 import com.example.demo.entity.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+@org.springframework.stereotype.Service
 public class ServiceImp implements Service{
-    Dao dao = new DaoImp();
+    @Autowired
+    private Dao dao;
 
     public ServiceImp( ){
 
