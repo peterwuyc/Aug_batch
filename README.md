@@ -1,6 +1,6 @@
 # Aug_batch
 
-|Date|content|Assignment| Issue|update|
+|Date|content|Assignment| Issues|update|
 |---|---|---|---|---|
 |8.2|ppt|
 |8.3 |ppt|sumPrime |
