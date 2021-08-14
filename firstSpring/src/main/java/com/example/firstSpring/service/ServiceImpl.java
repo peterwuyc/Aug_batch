@@ -2,6 +2,7 @@ package com.example.firstSpring.service;
 
 import com.example.firstSpring.dao.Dao;
 import com.example.firstSpring.dao.DaoImpl;
+import com.example.firstSpring.dao.StudentRepo;
 import com.example.firstSpring.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -36,6 +37,7 @@ public class ServiceImpl implements Service{
     public void setDao(Dao dao){
         this.dao = dao;
     }
+
     //4.构造器
     //@Autowired
     public ServiceImpl(Dao dao){
@@ -45,13 +47,17 @@ public class ServiceImpl implements Service{
     //public ServiceImpl() {
     //}
 
+    //8.13
+    @Autowired
+    private StudentRepo studentRepo;
 
     @Override
     //8.12 here
     public List<Student> getAllElements() {
+        return studentRepo.findAll();
         //throw new RuntimeException();
         //return null;
-        return dao.getAllElement();
+        //return dao.getAllElement();
     }
 
     @Override

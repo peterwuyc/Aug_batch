@@ -15,13 +15,23 @@ import java.util.List;
  * @Email : PEIYINGLYU@GMAIL.COM
  * @Description :
  */
-
+//8.13
+//for jpa
+@Entity
+@Table(name = "student")
+//一个类对应一个表
 public class Student {
-    private Integer id;
+    //8.13映射数据库
+    //table里面的primary key@Id
+    @Id
+    private Integer id; //查找时候就默认这个
+    @Column(name = "name")
     private String name;
+    @Column(name = "age")
     private Integer age;
+
     //8.12
-    private List<String> list=new ArrayList<>();
+    //private List<String> list=new ArrayList<>();
     //private List<Student> students = new ArrayList<>();
 
     public Student(){}

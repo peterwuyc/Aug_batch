@@ -42,20 +42,21 @@ public class Controller {
     //Service service = new ServiceImpl();
 
     @GetMapping(value = "/gp/student")
-    //public Student get(){
-    public String get(){
+    public List<Student> get(){
+    //public String get(){
         //8.12
         //人为制造out of bounds array 抛出
-        int[] test = new int[3];
-        test[0] = 10;
-        test[1] = 20;
-        test[2] = 30;
-        test[3] = 40;
+//        int[] test = new int[3];
+//        test[0] = 10;
+//        test[1] = 20;
+//        test[2] = 30;
+//        test[3] = 40;
         //人为制造空指针 for BaseController
 //        Student s=null;
 //        s.getId();
 //        return student;
-        return "simple get success";
+        return service.getAllElements();
+        //return "simple get success";
     }
 
     @GetMapping(value = "/gp/students")
