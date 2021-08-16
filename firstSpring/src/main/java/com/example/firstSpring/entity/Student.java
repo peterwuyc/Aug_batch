@@ -3,6 +3,11 @@ package com.example.firstSpring.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -40,16 +45,16 @@ public class Student {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.list = list;
+        //this.list = list;
     }
 
-    public List<String> getList() {
-        return list;
-    }
+//    public List<String> getList() {
+//        return list;
+//    }
 
-    public void setList(List<String> list) {
-        this.list = list;
-    }
+//    public void setList(List<String> list) {
+//        this.list = list;
+//    }
 
     public Integer getId() {
         return id;

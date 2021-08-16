@@ -40,10 +40,10 @@ public class ServiceImpl implements Service{
 
     //4.构造器
     //@Autowired
-    public ServiceImpl(Dao dao){
-        this.dao = dao;
-        //先扫描dao 在扫描service
-    }
+//    public ServiceImpl(Dao dao){
+//        this.dao = dao;
+//        //先扫描dao 在扫描service
+//    }
     //public ServiceImpl() {
     //}
 
