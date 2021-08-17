@@ -27,7 +27,6 @@ public class Controller {
         Student student = new Student();
         BeanUtils.copyProperties(request,student);
         service.createElement(student.getId(),student);
-        service.getAllElements();
         return "successful create";
 
     }
@@ -35,7 +34,6 @@ public class Controller {
     @DeleteMapping(value = "/gp/student")
     public String delet(@RequestParam("id")Integer id) throws Exception {
         service.deleteElementByKey(id);
-        service.getAllElements();
         return "successful delete";
     }
 
@@ -44,7 +42,6 @@ public class Controller {
         Student student = new Student();
         BeanUtils.copyProperties(request,student);
         service.updateElementByKey(student.getId(),student);
-        service.getAllElements();
         return "successful update";
     }
 

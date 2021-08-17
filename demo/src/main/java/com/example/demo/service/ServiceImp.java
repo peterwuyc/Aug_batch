@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.dao.Dao;
 import com.example.demo.dao.DaoImp;
+import com.example.demo.dao.StudentRepo;
 import com.example.demo.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,31 +13,36 @@ public class ServiceImp implements Service{
     @Autowired
     private Dao dao;
 
+    @Autowired
+    private StudentRepo studentRepo;
+
     public ServiceImp( ){
 
     }
     @Override
     public List getAllElements() {
-        return dao.getAllElements();
+        //return dao.getAllElements();
+        return studentRepo.findAll();
     }
 
     @Override
     public Student getElementByKey(Integer key) throws Exception {
-        return dao.getElementByKey(key);
+        return studentRepo.getById(key);
     }
 
     @Override
     public void updateElementByKey(Integer key, Student student) throws Exception {
-        dao.updateElementByKey(key,student);
+        //.updateElementByKey(key,student);
+        studentRepo.save(student);
     }
 
     @Override
     public void createElement(Integer key, Student student) throws Exception {
-        dao.createElement(key,student);
+        studentRepo.save(student);
     }
 
     @Override
     public void deleteElementByKey(Integer key) throws Exception {
-        dao.deleteElementByKey(key);
+        studentRepo.deleteById(key);
     }
 }
