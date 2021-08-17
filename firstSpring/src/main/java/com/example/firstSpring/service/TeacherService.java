@@ -2,6 +2,8 @@ package com.example.firstSpring.service;
 
 import com.example.firstSpring.entity.Student;
 import com.example.firstSpring.entity.Teacher;
+import com.example.firstSpring.entity.TeacherRequestBody;
+
 import java.util.*;
 
 /**
@@ -19,7 +21,8 @@ import java.util.*;
 
 public interface TeacherService {
     //一个操作的表一个repo
-    //Teacher findById(Integer id);
-
-
+    Teacher findById(Integer id);
+    void updateTeacher(TeacherRequestBody teacherRequestBody);
+    void createTeacher(TeacherRequestBody teacherRequestBody);
+    void deleteTeacher(TeacherRequestBody teacherRequestBody);
 }
