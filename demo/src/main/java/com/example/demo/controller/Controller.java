@@ -6,6 +6,7 @@ import com.example.demo.service.Service;
 import com.example.demo.service.ServiceImp;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,9 +18,9 @@ public class Controller {
 
 
     @GetMapping(value = "/gp/student")
-    public String get(@RequestParam("id")Integer id) throws Exception {
-            service.getElementByKey(id);
-            return "successful get";
+    public ResponseEntity<Student> get(@RequestParam("id")Integer id) throws Exception {
+        Student student = service.getElementByKey(id);
+        return ResponseEntity.ok(student);
     }
 
     @PostMapping(value = "/gp/student", consumes = {"application/json"})
