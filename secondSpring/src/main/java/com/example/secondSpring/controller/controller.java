@@ -15,6 +15,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -177,6 +179,20 @@ public class controller {
         Product product = (Product) ioc.getBean("product");
         System.out.println(product);
         return ResponseEntity.ok(product);
+    }
+
+    //----------------------------
+    //8.20 respone request
+    //-----------------------------
+    @GetMapping(value = "/web/")
+    public ResponseEntity<Page<Student>> webGet(@RequestParam("index") Integer index,
+                                                @RequestParam("size") Integer size,
+                                                HttpServletRequest httpServletRequest,
+                                                HttpServletResponse httpServletResponse){
+        httpServletResponse.getStatus();
+        httpServletRequest.getCookies();
+        return ResponseEntity.ok(service.findStudentPage(index, size));
+        //return service.getAllElement();
     }
 
 }

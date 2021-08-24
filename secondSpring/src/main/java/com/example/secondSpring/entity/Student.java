@@ -1,5 +1,7 @@
 package com.example.secondSpring.entity;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,6 +13,7 @@ import javax.persistence.Table;
 //-------------------------
 @Entity
 @Table(name="student")
+@Where(clause = "is_deleted=false")
 public class Student {
 
     @Id

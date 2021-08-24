@@ -46,14 +46,15 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     //-------------------------
-    //
+    //软删除
     //-------------------------
     @Override
     public void deleteTeacher(TeacherRequestBody teacherRequestBody) {
         Teacher teacher = teacherRepo.findById(teacherRequestBody.getId()).get();
-        teacher.setId(null);
-        teacher.setName(null);
-        teacher.setMyClass(null);
+        //teacher.setIsDeleted(true);
+//        teacher.setId(null);
+//        teacher.setName(null);
+//        teacher.setMyClass(null);
         teacherRepo.save(teacher);
     }
 }

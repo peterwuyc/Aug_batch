@@ -1,6 +1,7 @@
 package com.example.secondSpring.config;
 
 import com.example.secondSpring.entity.Student;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,6 +21,17 @@ public class Config {
     @Bean(name="thirdIOC")
     public Student getStudent3(){
         return new Student(5,"thirdIOC",25);
+    }
+
+    //8.19 filter
+    @Bean
+    public FilterRegistrationBean registrationBean(){
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        filterRegistrationBean.setFilter(new MyFilter());
+        filterRegistrationBean.setOrder(1);
+        //filterRegistrationBean.addUrlPatterns("/**"); //any paths
+        filterRegistrationBean.addUrlPatterns("/gp/*");
+        return filterRegistrationBean;
     }
 
 }
