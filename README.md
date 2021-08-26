@@ -13,4 +13,4 @@
 |8.16|spring connects DB，one2one，many2many，join| 增删改查| 增N删N改Y查Y||
 |8.17|Page, 备注文件|||
 |8.19-8.20|web base & html 跳转|
-|8.24||分布式ppt & Eureka|
+|8.24|分布式ppt & Eureka|
