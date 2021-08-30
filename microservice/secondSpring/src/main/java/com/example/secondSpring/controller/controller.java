@@ -14,6 +14,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -193,6 +194,14 @@ public class controller {
         httpServletRequest.getCookies();
         return ResponseEntity.ok(service.findStudentPage(index, size));
         //return service.getAllElement();
+    }
+
+    //8.26 通讯
+    @GetMapping(value="/restemplate")
+    public ResponseEntity<String> getRestTemplate(){
+        RestTemplate restTemplate=new RestTemplate();
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity("Http://localhost:8002/school", String.class);
+        return responseEntity;
     }
 
 }
