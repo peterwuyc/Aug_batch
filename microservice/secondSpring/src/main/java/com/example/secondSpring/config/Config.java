@@ -2,8 +2,10 @@ package com.example.secondSpring.config;
 
 import com.example.secondSpring.entity.Student;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class Config {
@@ -32,6 +34,13 @@ public class Config {
         //filterRegistrationBean.addUrlPatterns("/**"); //any paths
         filterRegistrationBean.addUrlPatterns("/gp/*");
         return filterRegistrationBean;
+    }
+
+    //8.26
+    @Bean
+    @LoadBalanced
+    public RestTemplate getRestTemplate(){
+        return new RestTemplate();
     }
 
 }

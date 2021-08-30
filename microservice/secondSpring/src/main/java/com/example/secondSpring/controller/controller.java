@@ -196,9 +196,15 @@ public class controller {
         //return service.getAllElement();
     }
 
+    //----------------------------
     //8.26 通讯
+    //----------------------------
+//    @Autowired
+//    private RestTemplate restTemplate;
+
     @GetMapping(value="/restemplate")
     public ResponseEntity<String> getRestTemplate(){
+        //在 config里配置了 只需要Autowired就好了
         RestTemplate restTemplate=new RestTemplate();
         ResponseEntity<String> responseEntity = restTemplate.getForEntity("Http://localhost:8002/school", String.class);
         return responseEntity;
