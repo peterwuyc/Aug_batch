@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TeacherList</title>
+    <h1>Teachers are:</h1>
+    <hr/>
+    <h3 th:each="t:${teachers}">
+        <a th:text="${t.getName()}" th:href="@{'http://localhost:8080/teacherDetail?id='+${t.getId()}}"></a>
+    </h3>
+    <a href="http://localhost:8080/">Return</a>
+</head>
+<body>
+
+</body>
+</html>
