@@ -15,3 +15,5 @@
 |8.19-8.20|web base & html 跳转|
 |8.24|分布式ppt & Eureka|
 |8.26|搭建分布式|1 service+ 2 clients|在dependency有一堆关于搭建的问题|在microservice package<br> service:9000<br>secondSpring:8083 school:8002|
+|8.30|touch fish。。。
+|8.31|security 理论+coding|2 Api -> signup & login|
