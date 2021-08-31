@@ -4,6 +4,7 @@ import com.example.demo.dao.TeacherRepo;
 import com.example.demo.entity.Teacher;
 import com.example.demo.entity.TeacherRequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -30,5 +31,10 @@ public class TeacherServiceImp implements TeacherService {
             teacher.setName(teacherRequestBody.getName());
             teacher.setMyClass(teacherRequestBody.getMyClass());
             teacherRepo.save(teacher);
+    }
+
+    @Override
+    public Page<Teacher> getTeacherPage(int index, int size) {
+        return null;
     }
 }
