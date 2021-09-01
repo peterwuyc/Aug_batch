@@ -13,10 +13,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="eureka-01-server" target="11" />
-      <module name="springcloud-01-consumer" target="11" />
-      <module name="springcloud-01-provider" target="11" />
-      <module name="springcloud-02-provider" target="11" />
+      <module name="eureka-01-server" target="8" />
+      <module name="springcloud-01-consumer" target="8" />
+      <module name="springcloud-01-provider" target="8" />
+      <module name="springcloud-02-provider" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
