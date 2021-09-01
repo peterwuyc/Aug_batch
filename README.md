@@ -1,5 +1,5 @@
 # Aug_batch
-## Day_7 Eureka集群+负载均衡的版本配置
+## Day_7 和 Day_8 Eureka集群+负载均衡的版本配置
 Eureka3.x版本之后不再集成Ribbon, 而SpringCloud 2020.x 更新了自己的LoadBalancer.
 
 因此想正常使用IRule接口调用Ribbon方法需要使用老版本的Eureka和SpringCloud, 因为SpringCould的版本和SpringBoot的版本是关联的，所以需要使用对应的SpringBoot版本.
