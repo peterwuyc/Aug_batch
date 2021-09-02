@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import javax.ws.rs.HttpMethod;
+
 import java.util.List;
 
 @RestController
@@ -20,11 +20,11 @@ public class Controller {
     @Autowired
     private Service service;// = new ServiceImp();
 
-    private RestTemplate restTemplate;
-    @Autowired
-    public void setRestTemplate(RestTemplate restTemplate){
-        this.restTemplate=restTemplate;
-    }
+//    private RestTemplate restTemplate;
+//    @Autowired
+//    public void setRestTemplate(RestTemplate restTemplate){
+//        this.restTemplate=restTemplate;
+//    }
     @Value("${test.url}")
     private String url;
 
@@ -71,12 +71,12 @@ public class Controller {
         return ResponseEntity.ok(url);
     }
 
-    @GetMapping(value = "/restemplate")
-    public ResponseEntity<String> getRestTemplate(){
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://SCHOOL/school",String.class);
-        //ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:8001/school",String.class);
-        //restTemplate.exchange("http://localhost:8001/school",HttpMethod.GET,String.class);
-        return responseEntity;
-    }
+//    @GetMapping(value = "/restemplate")
+//    public ResponseEntity<String> getRestTemplate(){
+//        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://SCHOOL/school",String.class);
+//        //ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:8001/school",String.class);
+//        //restTemplate.exchange("http://localhost:8001/school",HttpMethod.GET,String.class);
+//        return responseEntity;
+//    }
 
 }
