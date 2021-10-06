@@ -39,7 +39,7 @@ public interface Dao{
 }
     
 // 
-举例
+举例。
     
  public static void main(String[] args) throws NullPointerException{
     ServiceImpl s=new ServiceImpl();
